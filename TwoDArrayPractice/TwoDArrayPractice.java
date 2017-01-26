@@ -1,6 +1,6 @@
 /*
-* 
-*
+* The below methods print out different types of arrays. For example, 1D int/String arrays
+* as well as 2D int/String arrays using overloaded methods.
 * @author Ethan Malzberg
 * 11/30/16
 */ 
@@ -15,7 +15,7 @@ public class TwoDArrayPractice
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("Int array (prints 0's): ");
 		int [][] arr = new int[3][4];
-		printArray(arr);
+		printArray2D(arr);
 		
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("String array (prints null): ");
@@ -26,14 +26,14 @@ public class TwoDArrayPractice
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("2D array, 4x4: ");
 		int [][] arr2 = create2D();
-		printArray(arr2);
+		printArray2D(arr2);
 		
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("2D array abstracted: ");
 		int [][] arr3 = create2DAbstract(6);
 		int [][] arr4 = create2DAbstract(3);
-		printArray(arr3);
-		printArray(arr4);
+		printArray2D(arr3);
+		printArray2D(arr4);
 		
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		//int [][] arr5 = new int[6][6];
@@ -54,7 +54,7 @@ public class TwoDArrayPractice
 	* This method uses a for loop to print each row and column of an int array correctly
 	* @param int[][] a  array to be printed, made of ints
 	*/
-	public static void printArray(int[][] a)
+	public static void printArray2D(int[][] a)
 	{
 		for(int row = 0; row < a.length; row++)
 		{
