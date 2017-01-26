@@ -3,7 +3,7 @@ import java.util.Scanner;
 *This is a program that runs a two player tic tac toe game, with the size of the board decided by the use
 *It is a two player game, where players can decide their symbols and decide where they want to place it
 *by inputting a number on the board. If one of the player wins, or the game ends in a tie, a message will be printed 
-*that reveals the results, and then the game ends
+*that reveals the results, and then the game ends.
 *@author Ethan Malzberg
 *@version 1.0
 */
@@ -21,7 +21,6 @@ public class TicTacToe
 		Scanner kb = new Scanner(System.in);
 	
 		System.out.println("Hi! Welcome to our tic-tac-toe game. ");
-
 		
 		System.out.print("What symbol would you like player 1? ");
 		String symbol1 = kb.nextLine();
@@ -29,7 +28,7 @@ public class TicTacToe
 	
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
-
+		
 		System.out.print("What symbol would you like player 2? ");
 		String symbol2 = kb.nextLine();
 		symbol2 = errorHandlingSymbols(symbol2);
@@ -39,15 +38,12 @@ public class TicTacToe
 			symbol2 = kb.nextLine();
 		}
 
-
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-
 
 		System.out.print("How many rows to you want your board to have? "); 
 		String rows = kb.nextLine();
 		rows = errorHandlingRows(rows);
 		int boardSize = Integer.valueOf(rows);
-
 
 		String[][] board = initBoard(boardSize);
 		printBoard(board, boardSize);
@@ -72,6 +68,7 @@ public class TicTacToe
 				
 			System.out.print("Player " + player + ", what spot would you like to fill? ");
 			String spot = kb.nextLine();
+			
 			
 			while(!(inRange(spot,boardSize, board)))
 			{
@@ -205,12 +202,11 @@ public class TicTacToe
 				if(board[i][j].equals(symbol))
 					counter ++;
 			}
+			if(counter == n)
+			return true;
 			counter = 0;
 		}
-		if(counter == n)
-			return true;
-		else
-			return false;
+		return false;
 	}
 	
 	/**
@@ -232,12 +228,11 @@ public class TicTacToe
 				if(board[j][i].equals(symbol))
 					counter ++;
 			}
+			if(counter == n)
+				return true;
 			counter = 0;
 		}
-		if(counter == n)
-			return true;
-		else
-			return false;
+		return false;
 	}
 	
 	/**
@@ -291,6 +286,8 @@ public class TicTacToe
 	*/
 	public static boolean inRange(String spot, int size, String [][] a)
 	{
+		if(spot.equals(""))
+			return false;
 		int s = (int) (spot.charAt(0));
 		if(s<48 || s>57)
 			return false;
@@ -364,6 +361,12 @@ public class TicTacToe
 	{
 		Scanner kb = new Scanner(System.in);
 		int index = 0;
+		if(userRows.length() < 1)
+		{
+			System.out.print("Please choose a number:");
+			String newUserRows = kb.nextLine();
+			return errorHandlingRows(newUserRows);
+		}
 		while(index < userRows.length())
 		{
 			int s = (int) (userRows.charAt(index));
@@ -381,8 +384,5 @@ public class TicTacToe
 	
 	}
 
+
 }
-
-
-
-
