@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Motorcycle()
+comment1.params=x\ y\ z\ a
+comment1.target=Motorcycle(int,\ int,\ int,\ int)
+comment2.params=
+comment2.target=int\ gethbWidth()
+numComments=3
